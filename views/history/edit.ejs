@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit History Data</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Edit history Data</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/history">Show All Data</a>
+        </nav>
+    </div>
+    <%
+  if(err !== null && err !== undefined) {
+  %>
+        <div class="error">
+            <%=err%>
+        </div>
+        <%
+  }
+  %>
+            <div class="form-center">
+                <form action="/history/edit/<%=history.id%>" method="POST">
+                    <label for="historyScore">Score</label>
+                    <input type="text" name="historyScore" value="<%=history.historyScore === undefined ? '' : history.historyScore%>">
+                    <input type="submit" value="Edit History">
+                </form>
+            </div>
+</body>
+
+</html>

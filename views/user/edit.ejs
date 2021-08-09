@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit User Data</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Edit User Data</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/user">Show All Data</a>
+        </nav>
+    </div>
+    <%
+  if(err !== null && err !== undefined) {
+  %>
+        <div class="error">
+            <%=err%>
+        </div>
+        <%
+  }
+  %>
+            <div class="form-center">
+                <form action="/user/edit/<%=user.id%>" method="POST">
+                    <label for="Username">Username</label>
+                    <input type="text" name="Username" value="<%=user.Username === undefined ? '' : user.Username%>">
+                    <label for="passwordUser">Password</label>
+                    <input type="text" name="passwordUser" value="<%=user.passwordUser === undefined ? '' : user.passwordUser%>">
+                    <input type="submit" value="Edit user">
+                </form>
+            </div>
+</body>
+
+</html>

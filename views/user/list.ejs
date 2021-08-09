@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Data</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>User Data</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/user/add">Add user</a>
+        </nav>
+    </div>
+    <div class="form-center">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+            <% if (user !== null) { %>
+                <% user.forEach(td => { %>
+                    <tr>
+                        <td>
+                            <%=td.id%>
+                        </td>
+                        <td>
+                            <%=td.Username%>
+                                <%=td.passwordUser%>
+                        </td>
+                        <td>
+                            <a href="/user/edit/<%=td.id%>">Edit</a> |
+                            <a href="/user/delete/<%=td.id%>" onclick="return confirm('delete this user?')">Delete</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                        <% } %>
+                            <table>
+    </div>
+
+</body>
+
+</html>

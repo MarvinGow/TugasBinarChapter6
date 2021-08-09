@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add User Data</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Add Subject Data</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/user">Show All Data</a>
+        </nav>
+    </div>
+    <div class="form-center">
+        <form action="/user/add" method="post">
+            <label for="Username">Username</label>
+            <input type="text" name="Username">
+            <label for="passwordUser%">Password</label>
+            <input type="text" name="passwordUser">
+            <input type="submit" value="Add User">
+        </form>
+    </div>
+</body>
+
+</html>

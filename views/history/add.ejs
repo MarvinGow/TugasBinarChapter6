@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add History Data</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Add History Data</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/history">Show All Data</a>
+        </nav>
+    </div>
+    <div class="form-center">
+        <form action="/history/add" method="post">
+            <label for="historyScore">Score</label>
+            <input type="text" name="historyScore">
+            <input type="submit" value="Add History">
+        </form>
+    </div>
+</body>
+
+</html>

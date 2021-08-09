@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Biodata</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Add Biodata</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/biodata">Show All Data</a>
+        </nav>
+    </div>
+    <div class="form-center">
+        <form action="/biodata/add" method="post">
+            <label for="firstName">Firstname</label>
+            <input type="text" name="firstName">
+            <label for="lastName">LastName</label>
+            <input type="text" name="lastName">
+            <label for="address">address</label>
+            <input type="text" name="address">
+            <label for="email">email</label>
+            <input type="text" name="email">
+            <input type="submit" value="Add Biodata">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Biodata</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Biodata</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/biodata/add">Add Biodata</a>
+        </nav>
+    </div>
+    <div class="form-center">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Address</th>
+                <th>Email</th>
+            </tr>
+            <% if (biodata !== null) { %>
+                <% biodata.forEach(td => { %>
+                    <tr>
+                        <td>
+                            <%=td.id%>
+                        </td>
+                        <td>
+                            <%=td.firstName%>
+                                <%=td.lastName%>
+                                    <%=td.address%>
+                                        <%=td.email%>
+                        </td>
+                        <td>
+                            <a href="/biodata/edit/<%=td.id%>">Edit</a> |
+                            <a href="/biodata/delete/<%=td.id%>" onclick="return confirm('delete this biodata?')">Delete</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                        <% } %>
+                            <table>
+    </div>
+
+</body>
+
+</html>

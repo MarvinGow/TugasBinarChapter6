@@ -1,0 +1,38 @@
+<head>
+    <title>Edit Biodata</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="masthead">
+        <h1>Edit Biodata</h1>
+        <nav>
+            <%- include('../nav/navbar') %>
+                <a href="/biodata">Show All Data</a>
+        </nav>
+    </div>
+    <%
+  if(err !== null && err !== undefined) {
+  %>
+        <div class="error">
+            <%=err%>
+        </div>
+        <%
+  }
+  %>
+            <div class="form-center">
+                <form action="/biodata/edit/<%=biodata.id%>" method="POST">
+                    <label for="firstName">Score</label>
+                    <input type="text" name="firstName" value="<%=biodata.firstName === undefined ? '' : biodata.firstName%>">
+                    <label for="lastName">LastName</label>
+                    <input type="text" name="lastName" value="<%=biodata.lastName === undefined ? '' : biodata.lastName%>">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" value="<%=biodata.address === undefined ? '' : biodata.address%>">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" value="<%=biodata.email === undefined ? '' : biodata.email%>">
+                    <input type="submit" value="Edit Biodata">
+                </form>
+            </div>
+</body>
+
+</html>
